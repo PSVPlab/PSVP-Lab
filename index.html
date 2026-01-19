@@ -16,7 +16,15 @@
     .nav-active { border-bottom: 2px solid #003366; color: #003366; font-weight: bold; }
     .fade-in { animation: fadeIn 0.4s ease-in; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    .publication-item { padding-left: 2em; text-indent: -2em; line-height: 1.6; margin-bottom: 0.8rem; font-size: 0.95rem; }
+    .publication-item {
+      padding-left: 2em;
+      text-indent: -2em;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
   </style>
 </head>
 
@@ -26,9 +34,10 @@
   <!-- Background overlay -->
   <div class="min-h-screen bg-black/25">
 
-    <!-- Navigation (정렬/줄바꿈 문제 해결 버전) -->
+    <!-- Navigation -->
     <nav class="bg-white/85 backdrop-blur-md shadow-sm sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 md:px-6 py-2.5 flex justify-between items-center">
+      <!-- nav 폭을 카드와 동일 기준으로 -->
+      <div class="mx-auto w-[min(1600px,calc(100%-2rem))] md:w-[min(1800px,calc(100%-3rem))] py-2.5 flex justify-between items-center">
         <div class="text-lg font-bold hufs-blue cursor-pointer tracking-tight whitespace-nowrap" onclick="showTab('main')">
           PSV <span class="text-gray-400 font-light text-sm ml-0.5 hidden sm:inline">Lab</span>
         </div>
@@ -41,17 +50,16 @@
       </div>
     </nav>
 
-    <!-- Page Card Wrapper (nav랑 더 붙게: 상단 여백 줄임) -->
-    <div class="max-w-6xl mx-auto px-4 md:px-6 pt-3 pb-10 md:pt-4 md:pb-12">
-      <!-- 카드가 너무 하얀 느낌 줄임 -->
+    <!-- Page Card Wrapper: 큰 화면에서 더 넓게 -->
+    <div class="mx-auto w-[min(1600px,calc(100%-2rem))] md:w-[min(1800px,calc(100%-3rem))] pt-2 pb-10 md:pt-3 md:pb-12">
       <div class="bg-white/65 backdrop-blur-lg rounded-xl shadow-md overflow-hidden border border-white/20">
 
         <!-- Page 1: Main -->
         <div id="main" class="tab-content active fade-in">
 
-          <!-- 헤더-본문 간격 줄임 -->
-          <header class="py-6 md:py-8 px-6 border-b border-slate-200/60">
-            <div class="max-w-5xl mx-auto">
+          <header class="py-6 md:py-8 px-4 sm:px-6 lg:px-10 border-b border-slate-200/60">
+            <!-- 내부 max-width 제거: 카드 폭을 따라감 -->
+            <div class="mx-auto w-full">
               <div class="text-center md:text-left md:pl-2 lg:pl-6">
                 <p class="text-xs tracking-widest uppercase text-slate-600 mb-2">
                   사회적 취약성 심리 연구실
@@ -64,8 +72,7 @@
             </div>
           </header>
 
-          <!-- 메인 상단 여백 줄임 -->
-          <main class="max-w-5xl mx-auto pt-6 pb-10 md:pt-8 md:pb-14 px-6">
+          <main class="mx-auto w-full pt-6 pb-10 md:pt-8 md:pb-14 px-4 sm:px-6 lg:px-10">
 
             <section class="mb-14">
               <div class="text-center mb-8">
@@ -118,7 +125,7 @@
 
         <!-- Page 2: PI Profile -->
         <div id="profile" class="tab-content fade-in">
-          <main class="max-w-4xl mx-auto py-12 md:py-16 px-6">
+          <main class="mx-auto w-full py-12 md:py-16 px-4 sm:px-6 lg:px-10">
 
             <div class="mb-6 pb-2">
               <h2 class="text-2xl font-bold mb-1 hufs-blue">Professor</h2>
@@ -196,7 +203,7 @@
 
         <!-- Page 3: Research & Publications -->
         <div id="research" class="tab-content fade-in">
-          <main class="max-w-4xl mx-auto py-12 md:py-16 px-6">
+          <main class="mx-auto w-full py-12 md:py-16 px-4 sm:px-6 lg:px-10">
             <h2 class="text-xl font-bold mb-10 text-left hufs-blue tracking-tight">Research & Publications</h2>
 
             <section class="mb-14">
@@ -205,10 +212,10 @@
               </h3>
               <div class="p-5 bg-white/75 border border-gray-100 rounded-xl shadow-sm">
                 <ol class="list-decimal pl-5 space-y-3 text-[13px] text-gray-900 font-medium">
-<li>Systematic review of social functioning in individuals with high-functioning autism spectrum disorder (ASD)</li>
-<li>Adult ADHD symptoms and job-related competencies: A comparative study of Korean and Chinese employees and underlying psychological mechanisms</li>
-<li>Psychological mechanisms of body dysmorphic disorder based on objectification theory</li>
-<li>Counselors’ multicultural case conceptualization competence and implicit bias in counseling Chinese international students</li>
+                  <li>Systematic review of social functioning in individuals with high-functioning autism spectrum disorder (ASD)</li>
+                  <li>Adult ADHD symptoms and job-related competencies: A comparative study of Korean and Chinese employees and underlying psychological mechanisms</li>
+                  <li>Psychological mechanisms of body dysmorphic disorder based on objectification theory</li>
+                  <li>Counselors’ multicultural case conceptualization competence and implicit bias in counseling Chinese international students</li>
                 </ol>
               </div>
             </section>
@@ -227,7 +234,7 @@
 
               <div class="space-y-5">
                 <h4 class="text-[9px] font-bold text-gray-500 mb-3 uppercase tracking-widest border-b border-gray-200/70 pb-0.5">Published (2019 - Present)</h4>
-
+                <!-- 이하 동일 (생략 없이 그대로 유지 가능) -->
                 <div class="publication-item"><strong>Baek, K. Y.</strong>, Kim, S., & Joo, H. (2025). Qualitative Research on Gendered Racism Experienced by Asian Migrant Women in South Korea. <em>Asian Women</em>, 41(3), 1-22. (First & Corresponding Author).</div>
                 <div class="publication-item">박지수, 이정윤, <strong>백근영</strong> (2025). 디지털 시대의 육아: 육아관련 오픈채팅방에서의 MZ세대 어머니들의 경험과 의미. <em>육아지원연구</em>, 20(4), 155-186.</div>
                 <div class="publication-item"><strong>백근영</strong> (2025). 인터뷰 기반 텍스트 분석을 통한 아시안 이주여성의 젠더화된 인종차별 경험 탐색. <em>다문화콘텐츠연구</em>, 53, 7-53.</div>
@@ -251,8 +258,8 @@
           </main>
         </div>
 
-        <footer class="bg-white/55 backdrop-blur-lg border-t border-gray-200/60 py-6 px-6">
-          <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-600">
+        <footer class="bg-white/55 backdrop-blur-lg border-t border-gray-200/60 py-6 px-4 sm:px-6 lg:px-10">
+          <div class="mx-auto w-full flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-600">
             <div class="mb-2 md:mb-0 text-center md:text-left">
               <p class="font-bold hufs-blue mb-0.5 uppercase tracking-tight">PSV Lab</p>
               <p>Psychology of Social Vulnerability Lab</p>
@@ -275,8 +282,10 @@
 
         document.getElementById(tabId).classList.add('active');
         const activeNav = document.getElementById('nav-' + tabId);
-        activeNav.classList.add('nav-active');
-        activeNav.classList.remove('text-gray-600');
+        if (activeNav) {
+          activeNav.classList.add('nav-active');
+          activeNav.classList.remove('text-gray-600');
+        }
 
         window.scrollTo(0, 0);
       }
