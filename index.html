@@ -29,7 +29,7 @@
 
     <!-- Navigation -->
     <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-      <div class="max-w-5xl mx-auto px-6 py-2.5 flex justify-between items-center">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 pt-3 pb-10 md:pt-4 md:pb-12">
         <div class="text-lg font-bold hufs-blue cursor-pointer tracking-tight" onclick="showTab('main')">
           PSV <span class="text-gray-400 font-light text-sm ml-0.5 hidden sm:inline">Lab</span>
         </div>
@@ -43,7 +43,7 @@
 
     <!-- Page Card Wrapper -->
     <div class="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-12">
-      <div class="bg-white/85 backdrop-blur-md rounded-2xl shadow-xl overflow-hidden border border-white/30">
+      <div class="bg-white/80 backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-white/30">
 
         <!-- Page 1: Main (Home & Contact) -->
         <div id="main" class="tab-content active fade-in">
@@ -64,34 +64,39 @@
 
           <main class="max-w-5xl mx-auto py-10 md:py-14 px-6">
             <section class="mb-14">
-              <h3 class="text-xl font-bold mb-8 text-left hufs-blue tracking-tight">Three Core Research Focus Areas</h3>
-              <div class="grid md:grid-cols-3 gap-5">
-                <!-- Point 1: Neurodiversity -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 transition-all duration-300">
-                  <div class="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center text-xl mb-4">🧩</div>
-                  <h4 class="font-bold text-base mb-2 hufs-blue">Neurodivergent Populations<br>신경다양성 집단</h4>
-                  <p class="text-gray-600 text-[13px] leading-relaxed">
-                    ASD, ADHD 개인들이 경험하는 심리 및 사회적 어려움을 탐색하고, 이들의 적응 및 기능 향상을 돕기 위한 방법을 연구합니다.
-                  </p>
-                </div>
-                <!-- Point 2: Women's Issues -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-pink-200 transition-all duration-300">
-                  <div class="w-10 h-10 bg-pink-50 rounded-lg flex items-center justify-center text-xl mb-4">👩</div>
-                  <h4 class="font-bold text-base mb-2 hufs-blue">Women’s Lives and Adaptation<br>여성의 삶과 적응</h4>
-                  <p class="text-gray-600 text-[13px] leading-relaxed">
-                    다양한 연령과 문화적 배경을 지닌 여성 집단이 겪는 대상화 경험 및 정서 조절 등 심리적 어려움과 그 원인에 대해 연구합니다.
-                  </p>
-                </div>
-                <!-- Point 3: Resilience -->
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:border-green-200 transition-all duration-300">
-                  <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-xl mb-4">🌿</div>
-                  <h4 class="font-bold text-base mb-2 hufs-blue">Resilience among Vulnerable Populations<br>취약 계층의 심리사회적 적응</h4>
-                  <p class="text-gray-600 text-[13px] leading-relaxed">
-                    이주민, 빈곤 청년 등 취약 계층의 회복탄력성을 탐구하여 건강한 사회 복귀와 자립을 지원합니다.
-                  </p>
-                </div>
-              </div>
-            </section>
+  <div class="text-center mb-8">
+    <h3 class="text-xl font-bold hufs-blue tracking-tight">Three Core Research Focus Areas</h3>
+    <p class="text-sm text-gray-600 mt-2">
+      We investigate psychosocial mechanisms of vulnerability and pathways to adaptation across diverse populations.
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-5">
+    <!-- Panel 1 -->
+    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
+      <h4 class="font-bold text-base mb-2 hufs-blue">Neurodivergent Populations</h4>
+      <p class="text-gray-700 text-[13px] leading-relaxed">
+        We examine psychosocial and interpersonal challenges experienced by individuals with ASD and ADHD, and study intervention pathways that support adaptation and social functioning.
+      </p>
+    </div>
+
+    <!-- Panel 2 -->
+    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
+      <h4 class="font-bold text-base mb-2 hufs-blue">Women’s Lives and Adaptation</h4>
+      <p class="text-gray-700 text-[13px] leading-relaxed">
+        We study women’s lived experiences across age and cultural contexts, including objectification-related processes, emotion regulation, and their psychosocial correlates.
+      </p>
+    </div>
+
+    <!-- Panel 3 -->
+    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
+      <h4 class="font-bold text-base mb-2 hufs-blue">Resilience in Vulnerable Populations</h4>
+      <p class="text-gray-700 text-[13px] leading-relaxed">
+        We focus on resilience and recovery among socially vulnerable groups (e.g., migrants, economically disadvantaged youth), identifying pathways to reintegration and independence.
+      </p>
+    </div>
+  </div>
+</section>
 
             <section id="contact" class="bg-slate-100 rounded-xl p-7 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
               <div class="mb-4 md:mb-0">
