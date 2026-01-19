@@ -19,139 +19,346 @@
     .publication-item {
       padding-left: 2em;
       text-indent: -2em;
-      line-height: 1.65;
-      margin-bottom: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 0.8rem;
       font-size: 0.95rem;
+      overflow-wrap: anywhere;
       word-break: break-word;
     }
   </style>
 </head>
 
 <body class="min-h-screen text-gray-900"
-  style="background-image:url('pexels-isnania-isnania-2154264473-35645082.jpg'); background-size:cover; background-position:center;">
+      style="background-image:url('pexels-isnania-isnania-2154264473-35645082.jpg'); background-size:cover; background-position:center;">
 
-<div class="min-h-screen bg-black/30">
+  <!-- Background overlay -->
+  <div class="min-h-screen bg-black/25">
 
-<!-- NAV -->
-<nav class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
-  <div class="mx-auto w-[min(1600px,calc(100%-2rem))] py-2.5 flex justify-between items-center">
-    <div class="text-lg font-bold hufs-blue cursor-pointer whitespace-nowrap" onclick="showTab('main')">
-      PSV <span class="text-gray-400 text-sm hidden sm:inline">Lab</span>
+    <!-- Navigation -->
+    <nav class="bg-white/85 backdrop-blur-md shadow-sm sticky top-0 z-50">
+      <!-- nav 폭을 카드와 동일 기준으로 -->
+      <div class="mx-auto w-[min(1600px,calc(100%-2rem))] md:w-[min(1800px,calc(100%-3rem))] py-2.5 flex justify-between items-center">
+        <div class="text-lg font-bold hufs-blue cursor-pointer tracking-tight whitespace-nowrap" onclick="showTab('main')">
+          PSV <span class="text-gray-400 font-light text-sm ml-0.5 hidden sm:inline">Lab</span>
+        </div>
+
+        <div class="flex flex-nowrap whitespace-nowrap items-center gap-6 md:gap-8 text-xs md:text-sm">
+          <button id="nav-main" class="nav-active pb-0.5 transition-all" onclick="showTab('main')">Home</button>
+          <button id="nav-profile" class="pb-0.5 hover:text-blue-800 transition-all text-gray-600" onclick="showTab('profile')">People</button>
+          <button id="nav-research" class="pb-0.5 hover:text-blue-800 transition-all text-gray-600" onclick="showTab('research')">Publication</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Page Card Wrapper: 큰 화면에서 더 넓게 -->
+    <div class="mx-auto w-[min(1600px,calc(100%-2rem))] md:w-[min(1800px,calc(100%-3rem))] pt-2 pb-10 md:pt-3 md:pb-12">
+      <div class="bg-white/65 backdrop-blur-lg rounded-xl shadow-md overflow-hidden border border-white/20">
+
+        <!-- Page 1: Main -->
+        <div id="main" class="tab-content active fade-in">
+
+          <header class="py-6 md:py-8 px-4 sm:px-6 lg:px-10 border-b border-slate-200/60">
+            <!-- 내부 max-width 제거: 카드 폭을 따라감 -->
+            <div class="mx-auto w-full">
+              <div class="text-center md:text-left md:pl-2 lg:pl-6">
+                <p class="text-xs tracking-widest uppercase text-slate-600 mb-2">
+                  사회적 취약성 심리 연구실
+                </p>
+                <h1 class="text-xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900">
+                  Psychology of Social Vulnerability Lab
+                  <span class="opacity-70 font-semibold text-base md:text-lg ml-1"></span>
+                </h1>
+              </div>
+            </div>
+          </header>
+
+          <main class="mx-auto w-full pt-6 pb-10 md:pt-8 md:pb-14 px-4 sm:px-6 lg:px-10">
+
+            <section class="mb-14">
+              <div class="text-center mb-8">
+                <h3 class="text-xl font-bold hufs-blue tracking-tight">Three Core Research Focus Areas</h3>
+                <p class="text-sm text-gray-700 mt-2">
+                  We investigate psychosocial mechanisms of vulnerability and pathways to adaptation across diverse populations.
+                </p>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-5">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Neurodivergent Populations</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We examine psychosocial and interpersonal challenges experienced by individuals with ASD and ADHD, and study intervention pathways that support adaptation and social functioning.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Women’s Lives and Adaptation</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We study women’s lived experiences across age and cultural contexts, including objectification-related processes, emotion regulation, and their psychosocial correlates.
+                  </p>
+                </div>
+
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Resilience in Vulnerable Populations</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We focus on resilience and recovery among socially vulnerable groups (e.g., migrants, economically disadvantaged youth), identifying pathways to reintegration and independence.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section id="contact" class="bg-slate-100/80 rounded-xl p-7 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+              <div class="mb-4 md:mb-0">
+                <h3 class="text-lg font-bold mb-2 hufs-blue">Contact & Join Us</h3>
+                <div class="space-y-1.5 text-gray-800 text-[13px]">
+                  <div class="flex items-center"><span class="w-5 opacity-50">📍</span> <span>한국외대 교육대학원/일반대학원 상담심리전공 사회적 취약성 심리 연구실</span></div>
+                  <div class="flex items-center"><span class="w-5 opacity-50">📧</span> <span>kybaek@hufs.ac.kr</span></div>
+                </div>
+              </div>
+              <div class="hidden md:block border-l border-gray-200/80 h-16 mx-8"></div>
+              <div class="text-[11px] text-gray-600 leading-relaxed italic text-right">
+                * 관련 학위 과정 및 연구 참여 문의는<br>이메일을 통해 연락 부탁드립니다.
+              </div>
+            </section>
+
+          </main>
+        </div>
+
+<!-- Page 2: People -->
+<div id="profile" class="tab-content fade-in">
+  <main class="mx-auto w-full py-12 md:py-16 px-4 sm:px-6 lg:px-10">
+
+    <!-- Page Title -->
+    <h2 class="text-xl font-bold mb-10 text-left hufs-blue tracking-tight">
+      People
+    </h2>
+
+    <!-- Professors -->
+    <section class="mb-14">
+      <h3 class="text-base font-bold mb-6 flex items-center hufs-blue">
+        <span class="w-1 h-4 hufs-bg mr-2.5"></span>
+        Professor
+      </h3>
+
+      <div class="mb-6">
+        <p class="text-base text-gray-800 font-medium mb-1">
+          Keun Young Baek (백 근 영)
+        </p>
+        <p class="text-sm text-gray-600 italic">
+          Associate Professor, Counseling Psychology,<br>
+          Graduate School of Education / Graduate School,<br>
+          Hankuk University of Foreign Studies
+        </p>
+      </div>
+
+      <!-- Academic Background -->
+      <div class="space-y-6 mt-6">
+
+        <section>
+          <h4 class="text-[15px] font-bold mb-1.5 hufs-blue">
+            Academic Background
+          </h4>
+          <div class="space-y-1.5 text-[13px] sm:text-[14px] text-gray-800 leading-snug sm:leading-relaxed">
+
+            <p>
+              Yonsei University, Ph.D. in Education
+              <span class="block text-[12px] text-gray-600 sm:inline sm:text-[14px] sm:text-gray-800">
+                (Counseling Education)
+              </span>
+            </p>
+
+            <p>
+              Yonsei University, M.A. in Education
+              <span class="block text-[12px] text-gray-600 sm:inline sm:text-[14px] sm:text-gray-800">
+                (Counseling Education)
+              </span>
+            </p>
+
+            <p>Yonsei University, B.A. in Education</p>
+          </div>
+        </section>
+
+        <section>
+          <h4 class="text-[15px] font-bold mb-1.5 hufs-blue">
+            Professional Experience
+          </h4>
+          <div class="space-y-1.5 text-[13px] sm:text-[14px] text-gray-700 leading-snug sm:leading-relaxed">
+            <div class="flex">
+              <span class="w-28 flex-shrink-0 font-medium text-gray-600">
+                2023 – Present
+              </span>
+              <span>Associate Professor, Hankuk University of Foreign Studies</span>
+            </div>
+            <div class="flex">
+              <span class="w-28 flex-shrink-0 font-medium text-gray-600">
+                2019 – 2023
+              </span>
+              <span>Professor, Department of Psychotherapy, Myongji University</span>
+            </div>
+          </div>
+        </section>
+
+       <section class="mb-20 md:mb-28">
+  <h4 class="text-[15px] font-bold mb-1.5 hufs-blue">
+    Academic Services
+  </h4>
+
+  <div class="space-y-1.5 text-[13px] sm:text-[14px] text-gray-700 leading-tight sm:leading-relaxed">
+
+    <div class="flex">
+      <span class="w-20 sm:w-28 flex-shrink-0 font-medium text-gray-500">
+        2025 – 2026
+      </span>
+      <span>한국외국어대학교 교육대학원 부원장</span>
     </div>
-    <div class="flex gap-6 text-xs md:text-sm whitespace-nowrap">
-      <button id="nav-main" class="nav-active" onclick="showTab('main')">Home</button>
-      <button id="nav-profile" class="text-gray-600 hover:text-blue-800" onclick="showTab('profile')">People</button>
-      <button id="nav-research" class="text-gray-600 hover:text-blue-800" onclick="showTab('research')">Publication</button>
+
+    <div class="flex">
+      <span class="w-20 sm:w-28 flex-shrink-0 font-medium text-gray-500">
+        2024 – 2026
+      </span>
+      <span>한국외국어대학교 학생상담센터(서울) 센터장</span>
     </div>
+
+    <div class="flex">
+      <span class="w-20 sm:w-28 flex-shrink-0 font-medium text-gray-500">
+        2026 – 2027
+      </span>
+      <span>한국상담학회 생애개발상담학회 학술부위원장</span>
+    </div>
+
+    <div class="flex">
+      <span class="w-20 sm:w-28 flex-shrink-0 font-medium text-gray-500">
+        2025 – 2026
+      </span>
+      <span>한국상담학회 심리치료상담학회 학술부위원장</span>
+    </div>
+
+    <div class="flex">
+      <span class="w-20 sm:w-28 flex-shrink-0 font-medium text-gray-500">
+        2026
+      </span>
+      <span>한국상담심리학회 홍보위원회 부위원장</span>
+    </div>
+
   </div>
-</nav>
-
-<div class="mx-auto w-[min(1600px,calc(100%-2rem))] pt-2 pb-12">
-<div class="bg-slate-50/30 backdrop-blur-xl rounded-xl border border-white/20 shadow-md">
-
-<!-- PAGE 2 : PEOPLE -->
-<div id="profile" class="tab-content active fade-in">
-<main class="px-6 lg:px-10 py-14">
-
-<h2 class="text-xl font-bold mb-14 hufs-blue">People</h2>
-
-<section class="mb-14">
-<h3 class="text-base font-bold mb-6 flex items-center hufs-blue">
-<span class="w-1 h-4 hufs-bg mr-2.5"></span>Professor
-</h3>
-
-<p class="text-base font-medium text-gray-800 mb-1">Keun Young Baek (백근영)</p>
-<p class="text-sm italic text-gray-600 leading-relaxed mb-10">
-Associate Professor, Counseling Psychology,<br>
-Graduate School of Education / Graduate School,<br>
-Hankuk University of Foreign Studies
-</p>
-
-<div class="space-y-10">
-
-<section>
-<h4 class="text-sm font-bold hufs-blue mb-2">Academic Background</h4>
-<div class="space-y-2 text-sm leading-relaxed text-gray-800">
-<p>Yonsei University, Ph.D. in Education <span class="text-gray-600">(Counseling Education)</span></p>
-<p>Yonsei University, M.A. in Education <span class="text-gray-600">(Counseling Education)</span></p>
-<p>Yonsei University, B.A. in Education</p>
-</div>
 </section>
 
-<section>
-<h4 class="text-sm font-bold hufs-blue mb-2">Professional Experience</h4>
-<div class="space-y-2 text-sm leading-relaxed text-gray-700">
-<div class="flex gap-4"><span class="w-24 text-gray-500">2023–Present</span><span>Associate Professor, HUFS</span></div>
-<div class="flex gap-4"><span class="w-24 text-gray-500">2019–2023</span><span>Professor, Myongji University</span></div>
+    <!-- Graduate Students -->
+<section class="mt-14 md:mt-24">
+      <h3 class="text-base font-bold mb-6 flex items-center hufs-blue">
+        <span class="w-1 h-4 hufs-bg mr-2.5"></span>
+        Graduate Students
+      </h3>
+
+      <p class="text-base text-gray-800 font-medium mb-1">
+        Kyung Ha Lee (이 경 하)
+      </p>
+
+      <p class="text-sm text-gray-600 italic">
+        Ph.D. Candidate, Counseling Psychology,
+        <span class="inline sm:hidden"><br></span>
+        Department of Psychology,
+        <span class="inline sm:hidden"><br></span>
+        Graduate School,
+        <span class="inline sm:hidden"><br></span>
+        Hankuk University of Foreign Studies
+      </p>
+    </section>
+
+  </main>
 </div>
+
+        <!-- Page 3: Research & Publications -->
+        <div id="research" class="tab-content fade-in">
+          <main class="mx-auto w-full py-12 md:py-16 px-4 sm:px-6 lg:px-10">
+            <h2 class="text-xl font-bold mb-10 text-left hufs-blue tracking-tight">Research & Publications</h2>
+
+          <section class="mb-14">
+  <h3 class="text-base font-bold mb-4 flex items-center hufs-blue">
+    <span class="w-1 h-4 hufs-bg mr-2.5"></span>
+    Research in Progress
+  </h3>
+
+  <div class="p-6 md:p-7 bg-slate-50/45 backdrop-blur-lg border border-white/20 rounded-2xl shadow-sm">
+    <ol class="list-decimal pl-5 space-y-3 text-[13px] md:text-[14px] text-slate-900 font-medium leading-relaxed">
+      <li>Systematic review of social functioning in individuals with high-functioning autism spectrum disorder (ASD)</li>
+      <li>Adult ADHD symptoms and job-related competencies: A comparative study of Korean and Chinese employees and underlying psychological mechanisms</li>
+      <li>Psychological mechanisms of body dysmorphic disorder based on objectification theory</li>
+      <li>Counselors’ multicultural case conceptualization competence and implicit bias in counseling Chinese international students</li>
+    </ol>
+  </div>
 </section>
 
-<section>
-<h4 class="text-sm font-bold hufs-blue mb-2">Academic Services</h4>
-<div class="space-y-2 text-sm leading-relaxed text-gray-700">
-<div class="flex gap-4"><span class="w-24 text-gray-500">2025–2026</span><span>부원장, HUFS 교육대학원</span></div>
-<div class="flex gap-4"><span class="w-24 text-gray-500">2024–2026</span><span>센터장, HUFS 학생상담센터</span></div>
-<div class="flex gap-4"><span class="w-24 text-gray-500">2026–2027</span><span>한국상담학회 학술부위원장</span></div>
-</div>
-</section>
+            <section>
+              <h3 class="text-base font-bold mb-4 flex items-center hufs-blue">
+                <span class="w-1 h-4 hufs-bg mr-2.5"></span>Publications
+              </h3>
 
-</div>
-</section>
+              <div class="mb-10">
+                <h4 class="text-[9px] font-bold text-blue-700 mb-3 uppercase tracking-widest border-b border-blue-100/70 pb-0.5">In Press / Forthcoming</h4>
+                <div class="publication-item">
+                  Hwang, I. C., & <strong>Baek, K. Y.</strong> (in press). Facing Sexual Objectification: A Qualitative Study on South Korean Adolescent Girls’ Perspectives. <em>The Counseling Psychologist</em>. (Scheduled for publication in April 2026, Corresponding Author).
+                </div>
+              </div>
 
-<section class="mt-24">
-<h3 class="text-base font-bold mb-6 flex items-center hufs-blue">
-<span class="w-1 h-4 hufs-bg mr-2.5"></span>Graduate Students
-</h3>
+              <div class="space-y-5">
+                <h4 class="text-[9px] font-bold text-gray-500 mb-3 uppercase tracking-widest border-b border-gray-200/70 pb-0.5">Published (2019 - Present)</h4>
+                <!-- 이하 동일 (생략 없이 그대로 유지 가능) -->
+                <div class="publication-item"><strong>Baek, K. Y.</strong>, Kim, S., & Joo, H. (2025). Qualitative Research on Gendered Racism Experienced by Asian Migrant Women in South Korea. <em>Asian Women</em>, 41(3), 1-22. (First & Corresponding Author).</div>
+                <div class="publication-item">박지수, 이정윤, <strong>백근영</strong> (2025). 디지털 시대의 육아: 육아관련 오픈채팅방에서의 MZ세대 어머니들의 경험과 의미. <em>육아지원연구</em>, 20(4), 155-186.</div>
+                <div class="publication-item"><strong>백근영</strong> (2025). 인터뷰 기반 텍스트 분석을 통한 아시안 이주여성의 젠더화된 인종차별 경험 탐색. <em>다문화콘텐츠연구</em>, 53, 7-53.</div>
+                <div class="publication-item">안수정, 이윤영, <strong>백근영</strong> (2025). 평생교육 단과대학 재학생 대상 성장 마인드셋 기반 학습 프로그램의 개발 및 효과 검증. <em>교육학연구</em>, 63(2), 463-505.</div>
+                <div class="publication-item">최바올, <strong>백근영</strong> (2024). 20대 청년의 젠더갈등 인식에 대한 질적 연구. <em>젠더와 문화</em>, 17(1), 7-45.</div>
+                <div class="publication-item"><strong>백근영</strong>, 김내영, 주영선 (2024). 긍정심리자본은 빈곤 청년의 자립에 도움이 되는가? <em>아동과 권리</em>, 28(3), 245-267.</div>
+                <div class="publication-item"><strong>백근영</strong>, 김내영, 주영선 (2024). 빈곤가구에서 성장한 청년의 자립과정: 근거이론을 활용하여. <em>청소년학연구</em>, 31(8), 301-331.</div>
+                <div class="publication-item">송지혜, <strong>백근영</strong>, 김민선 (2024). 비자발적 실직 청년들의 재취업 과정에 대한 연구. <em>진로교육연구</em>, 37(3), 25-62.</div>
+                <div class="publication-item"><strong>백근영</strong> (2023). 평생교육 단과대학 재학생들의 그릿(Grit) 군집 유형과 학업성취도의 관계. <em>교육학연구</em>, 61(4), 365-396.</div>
+                <div class="publication-item"><strong>백근영</strong>, 김지현, 김지수 (2022). 코로나19로 인한 사회적 거리두기 수칙 준수의 심리적 어려움 및 극복방안. <em>학습자중심교과교육연구</em>, 22(1), 155-177.</div>
+                <div class="publication-item"><strong>Baek, K. Y.</strong>, Seo, Y. S., et al. (2021). Adapting Color Blindness to South Korean Attitudes Toward Multicultural Minorities. <em>The Counseling Psychologist</em>, 49(3), 353-390.</div>
+                <div class="publication-item">김민선, <strong>백근영</strong> (2021). 사회적 주변화와 경제적 어려움이 괜찮은 일자리와 직무만족에 미치는 영향. <em>인간이해</em>, 42(1), 101-126.</div>
+                <div class="publication-item"><strong>백근영</strong>, 최바올 (2021). 남녀대학생의 페미니즘에 대한 인식 차이. <em>인간이해</em>, 42(1), 25-49.</div>
+                <div class="publication-item">An, H. Y., Goodyear, R. K., Seo, Y. S., Garrison, Y., <strong>Baek, K. Y.</strong>, & Cho, H. J. (2020). Supervisor style as a predictor of counseling supervision relationship quality and supervisee satisfaction: Perceptions of US and South Korean supervisees. <em>Asia Pacific Education Review</em>, 21(3), 487-504.</div>
+                <div class="publication-item"><strong>백근영</strong> (2020). 영유아기 자녀를 둔 어머니의 불확실성에 대한 인내력 부족이 우울에 미치는 영향. <em>상담학연구</em>, 21(6), 165-200.</div>
+                <div class="publication-item"><strong>백근영</strong> (2020). 평생교육 단과대학 재학생들의 불확실성에 대한 인내력 부족과 학업지연행동 간의 관계: 회피/분산적 정서조절 양식의 매개효과 및 연령대에 따른 다집단 분석. <em>상담학연구</em>, 21(2), 147-169.</div>
+                <div class="publication-item"><strong>백근영</strong>, 김애란 (2020). 재한 중국 여자 유학생의 성적 대상화 경험이 섭식행동에 미치는 영향. <em>한국심리학회지: 상담 및 심리치료</em>, 32(4), 1615-1646.</div>
+                <div class="publication-item"><strong>백근영</strong> (2019). 상담자의 정당한 세상에 대한 믿음과 소수자에 대한 태도의 관계. <em>한국심리학회지: 상담 및 심리치료</em>, 31(4), 1289-1320.</div>
+              </div>
+            </section>
+          </main>
+        </div>
 
-<p class="text-base font-medium text-gray-800 mb-1">Kyung Ha Lee (이경하)</p>
-<p class="text-sm italic text-gray-600 leading-relaxed">
-Ph.D. Candidate, Counseling Psychology,<br>
-Department of Psychology,<br>
-Graduate School,<br>
-Hankuk University of Foreign Studies
-</p>
-</section>
+        <footer class="bg-white/55 backdrop-blur-lg border-t border-gray-200/60 py-6 px-4 sm:px-6 lg:px-10">
+          <div class="mx-auto w-full flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-600">
+            <div class="mb-2 md:mb-0 text-center md:text-left">
+              <p class="font-bold hufs-blue mb-0.5 uppercase tracking-tight">PSV Lab</p>
+              <p>Psychology of Social Vulnerability Lab</p>
+            </div>
+            <div class="text-center md:text-right italic">
+              <p>© 2026 Professor Baek, K. Y. All Rights Reserved.</p>
+              <p>Hankuk University of Foreign Studies</p>
+            </div>
+          </div>
+        </footer>
 
-</main>
-</div>
+      </div>
+    </div>
 
-<!-- PAGE 3 : RESEARCH -->
-<div id="research" class="tab-content fade-in">
-<main class="px-6 lg:px-10 py-14">
+    <script>
+      function showTab(tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('nav button').forEach(el => el.classList.remove('nav-active'));
+        document.querySelectorAll('nav button').forEach(el => el.classList.add('text-gray-600'));
 
-<h2 class="text-xl font-bold mb-14 hufs-blue">Research & Publications</h2>
+        document.getElementById(tabId).classList.add('active');
+        const activeNav = document.getElementById('nav-' + tabId);
+        if (activeNav) {
+          activeNav.classList.add('nav-active');
+          activeNav.classList.remove('text-gray-600');
+        }
 
-<section class="mb-14">
-<h3 class="text-base font-bold mb-4 flex items-center hufs-blue">
-<span class="w-1 h-4 hufs-bg mr-2.5"></span>Research in Progress
-</h3>
+        window.scrollTo(0, 0);
+      }
+    </script>
 
-<div class="bg-slate-100/35 backdrop-blur-xl border border-white/20 rounded-2xl p-7">
-<ol class="list-decimal pl-5 space-y-3 text-sm leading-relaxed text-gray-900">
-<li>Systematic review of social functioning in individuals with high-functioning autism spectrum disorder (ASD)</li>
-<li>Adult ADHD symptoms and job-related competencies: A comparative study of Korean and Chinese employees</li>
-<li>Psychological mechanisms of body dysmorphic disorder based on objectification theory</li>
-<li>Counselors’ multicultural case conceptualization competence and implicit bias</li>
-</ol>
-</div>
-</section>
-
-</main>
-</div>
-
-</div>
-</div>
-
-<script>
-function showTab(tabId) {
-  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('nav button').forEach(el => el.classList.remove('nav-active'));
-  document.getElementById(tabId).classList.add('active');
-  document.getElementById('nav-' + tabId)?.classList.add('nav-active');
-  window.scrollTo(0, 0);
-}
-</script>
-
-</div>
+  </div>
 </body>
 </html>
