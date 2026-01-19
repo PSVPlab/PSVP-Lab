@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- 검색 엔진 인덱싱 방지 설정: 링크가 있는 사람만 접속 가능하게 함 -->
   <meta name="robots" content="noindex, nofollow">
   <title>PSV Lab | 사회적 취약성 심리 연구실</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,41 +16,44 @@
     .nav-active { border-bottom: 2px solid #003366; color: #003366; font-weight: bold; }
     .fade-in { animation: fadeIn 0.4s ease-in; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    /* Hanging Indent Style */
     .publication-item { padding-left: 2em; text-indent: -2em; line-height: 1.6; margin-bottom: 0.8rem; font-size: 0.95rem; }
   </style>
 </head>
 
 <body class="min-h-screen text-gray-900"
       style="background-image:url('pexels-isnania-isnania-2154264473-35645082.jpg'); background-size:cover; background-position:center;">
+
   <!-- Background overlay -->
   <div class="min-h-screen bg-black/25">
 
-    <!-- Navigation -->
-    <nav class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-      <div class="max-w-6xl mx-auto px-4 md:px-6 pt-3 pb-10 md:pt-4 md:pb-12">
-        <div class="text-lg font-bold hufs-blue cursor-pointer tracking-tight" onclick="showTab('main')">
+    <!-- Navigation (정렬/줄바꿈 문제 해결 버전) -->
+    <nav class="bg-white/85 backdrop-blur-md shadow-sm sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 md:px-6 py-2.5 flex justify-between items-center">
+        <div class="text-lg font-bold hufs-blue cursor-pointer tracking-tight whitespace-nowrap" onclick="showTab('main')">
           PSV <span class="text-gray-400 font-light text-sm ml-0.5 hidden sm:inline">Lab</span>
         </div>
-        <div class="flex space-x-6 md:space-x-8 text-xs md:text-sm">
+
+        <div class="flex flex-nowrap whitespace-nowrap items-center gap-6 md:gap-8 text-xs md:text-sm">
           <button id="nav-main" class="nav-active pb-0.5 transition-all" onclick="showTab('main')">Home</button>
-          <button id="nav-profile" class="pb-0.5 hover:text-blue-800 transition-all text-gray-500" onclick="showTab('profile')">People</button>
-          <button id="nav-research" class="pb-0.5 hover:text-blue-800 transition-all text-gray-500" onclick="showTab('research')">Publication</button>
+          <button id="nav-profile" class="pb-0.5 hover:text-blue-800 transition-all text-gray-600" onclick="showTab('profile')">People</button>
+          <button id="nav-research" class="pb-0.5 hover:text-blue-800 transition-all text-gray-600" onclick="showTab('research')">Publication</button>
         </div>
       </div>
     </nav>
 
-    <!-- Page Card Wrapper -->
-    <div class="max-w-6xl mx-auto px-4 md:px-6 py-10 md:py-12">
-      <div class="bg-white/80 backdrop-blur-md rounded-xl shadow-lg overflow-hidden border border-white/30">
+    <!-- Page Card Wrapper (nav랑 더 붙게: 상단 여백 줄임) -->
+    <div class="max-w-6xl mx-auto px-4 md:px-6 pt-3 pb-10 md:pt-4 md:pb-12">
+      <!-- 카드가 너무 하얀 느낌 줄임 -->
+      <div class="bg-white/65 backdrop-blur-lg rounded-xl shadow-md overflow-hidden border border-white/20">
 
-        <!-- Page 1: Main (Home & Contact) -->
+        <!-- Page 1: Main -->
         <div id="main" class="tab-content active fade-in">
 
-          <header class="py-10 md:py-12 px-6 border-b border-slate-200/70">
+          <!-- 헤더-본문 간격 줄임 -->
+          <header class="py-6 md:py-8 px-6 border-b border-slate-200/60">
             <div class="max-w-5xl mx-auto">
               <div class="text-center md:text-left md:pl-2 lg:pl-6">
-                <p class="text-xs tracking-widest uppercase text-slate-500 mb-2">
+                <p class="text-xs tracking-widest uppercase text-slate-600 mb-2">
                   사회적 취약성 심리 연구실
                 </p>
                 <h1 class="text-xl md:text-3xl font-bold leading-tight tracking-tight text-slate-900">
@@ -62,56 +64,56 @@
             </div>
           </header>
 
-          <main class="max-w-5xl mx-auto py-10 md:py-14 px-6">
+          <!-- 메인 상단 여백 줄임 -->
+          <main class="max-w-5xl mx-auto pt-6 pb-10 md:pt-8 md:pb-14 px-6">
+
             <section class="mb-14">
-  <div class="text-center mb-8">
-    <h3 class="text-xl font-bold hufs-blue tracking-tight">Three Core Research Focus Areas</h3>
-    <p class="text-sm text-gray-600 mt-2">
-      We investigate psychosocial mechanisms of vulnerability and pathways to adaptation across diverse populations.
-    </p>
-  </div>
+              <div class="text-center mb-8">
+                <h3 class="text-xl font-bold hufs-blue tracking-tight">Three Core Research Focus Areas</h3>
+                <p class="text-sm text-gray-700 mt-2">
+                  We investigate psychosocial mechanisms of vulnerability and pathways to adaptation across diverse populations.
+                </p>
+              </div>
 
-  <div class="grid md:grid-cols-3 gap-5">
-    <!-- Panel 1 -->
-    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
-      <h4 class="font-bold text-base mb-2 hufs-blue">Neurodivergent Populations</h4>
-      <p class="text-gray-700 text-[13px] leading-relaxed">
-        We examine psychosocial and interpersonal challenges experienced by individuals with ASD and ADHD, and study intervention pathways that support adaptation and social functioning.
-      </p>
-    </div>
+              <div class="grid md:grid-cols-3 gap-5">
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Neurodivergent Populations</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We examine psychosocial and interpersonal challenges experienced by individuals with ASD and ADHD, and study intervention pathways that support adaptation and social functioning.
+                  </p>
+                </div>
 
-    <!-- Panel 2 -->
-    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
-      <h4 class="font-bold text-base mb-2 hufs-blue">Women’s Lives and Adaptation</h4>
-      <p class="text-gray-700 text-[13px] leading-relaxed">
-        We study women’s lived experiences across age and cultural contexts, including objectification-related processes, emotion regulation, and their psychosocial correlates.
-      </p>
-    </div>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Women’s Lives and Adaptation</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We study women’s lived experiences across age and cultural contexts, including objectification-related processes, emotion regulation, and their psychosocial correlates.
+                  </p>
+                </div>
 
-    <!-- Panel 3 -->
-    <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6 hover:bg-slate-100 transition-all duration-300">
-      <h4 class="font-bold text-base mb-2 hufs-blue">Resilience in Vulnerable Populations</h4>
-      <p class="text-gray-700 text-[13px] leading-relaxed">
-        We focus on resilience and recovery among socially vulnerable groups (e.g., migrants, economically disadvantaged youth), identifying pathways to reintegration and independence.
-      </p>
-    </div>
-  </div>
-</section>
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-6 hover:bg-slate-100/80 transition-all duration-300">
+                  <h4 class="font-bold text-base mb-2 hufs-blue">Resilience in Vulnerable Populations</h4>
+                  <p class="text-gray-800 text-[13px] leading-relaxed">
+                    We focus on resilience and recovery among socially vulnerable groups (e.g., migrants, economically disadvantaged youth), identifying pathways to reintegration and independence.
+                  </p>
+                </div>
+              </div>
+            </section>
 
-            <section id="contact" class="bg-slate-100 rounded-xl p-7 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+            <section id="contact" class="bg-slate-100/80 rounded-xl p-7 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
               <div class="mb-4 md:mb-0">
                 <h3 class="text-lg font-bold mb-2 hufs-blue">Contact & Join Us</h3>
-                <p class="text-gray-600 text-xs mb-3">인간의 적응과 회복에 대한 깊은 애정을 가진 연구자를 기다립니다.</p>
-                <div class="space-y-1.5 text-gray-700 text-[13px]">
+                <p class="text-gray-700 text-xs mb-3">인간의 적응과 회복에 대한 깊은 애정을 가진 연구자를 기다립니다.</p>
+                <div class="space-y-1.5 text-gray-800 text-[13px]">
                   <div class="flex items-center"><span class="w-5 opacity-50">📍</span> <span>한국외대 교육대학원/일반대학원 상담심리전공 사회적 취약성 심리 연구실</span></div>
                   <div class="flex items-center"><span class="w-5 opacity-50">📧</span> <span>kybaek@hufs.ac.kr</span></div>
                 </div>
               </div>
-              <div class="hidden md:block border-l border-gray-200 h-16 mx-8"></div>
-              <div class="text-[11px] text-gray-500 leading-relaxed italic text-right">
+              <div class="hidden md:block border-l border-gray-200/80 h-16 mx-8"></div>
+              <div class="text-[11px] text-gray-600 leading-relaxed italic text-right">
                 * 관련 학위 과정 및 연구 참여 문의는<br>이메일을 통해 연락 부탁드립니다.
               </div>
             </section>
+
           </main>
         </div>
 
@@ -119,33 +121,29 @@
         <div id="profile" class="tab-content fade-in">
           <main class="max-w-4xl mx-auto py-12 md:py-16 px-6">
 
-            <!-- Professor -->
             <div class="mb-6 pb-2">
               <h2 class="text-2xl font-bold mb-1 hufs-blue">Professor</h2>
               <p class="text-base text-gray-700 font-medium mb-1">Keun Young Baek (백 근 영)</p>
-              <p class="text-sm text-gray-500 italic">
+              <p class="text-sm text-gray-600 italic">
                 Associate Professor, Counseling Psychology,<br>
                 Graduate School of Education/Graduate School, Hankuk University of Foreign Studies
               </p>
             </div>
 
-            <!-- Sections -->
             <div class="space-y-6">
 
-              <!-- Academic Background -->
               <section>
                 <h3 class="text-[15px] font-bold mb-1.5 hufs-blue">Academic Background</h3>
-                <div class="space-y-1.5 text-[14px] text-gray-700 leading-relaxed">
+                <div class="space-y-1.5 text-[14px] text-gray-800 leading-relaxed">
                   <p>Yonsei University, Ph.D. in Education (Counseling Education)</p>
                   <p>Yonsei University, M.A. in Education (Counseling Education)</p>
                   <p>Yonsei University, B.A. in Education</p>
                 </div>
               </section>
 
-              <!-- Professional Experience -->
               <section>
                 <h3 class="text-[15px] font-bold mb-1.5 hufs-blue">Professional Experience</h3>
-                <div class="space-y-1.5 text-[14px] text-gray-700 leading-relaxed">
+                <div class="space-y-1.5 text-[14px] text-gray-800 leading-relaxed">
                   <div class="flex">
                     <span class="w-28 flex-shrink-0 font-medium text-gray-600">2023 – Present</span>
                     <span>Associate Professor, Hankuk University of Foreign Studies</span>
@@ -157,10 +155,9 @@
                 </div>
               </section>
 
-              <!-- Academic Services -->
               <section>
                 <h3 class="text-[15px] font-bold mb-1.5 hufs-blue">Academic Services</h3>
-                <div class="space-y-1.5 text-[14px] text-gray-700 leading-relaxed pl-1">
+                <div class="space-y-1.5 text-[14px] text-gray-800 leading-relaxed pl-1">
                   <p class="flex items-start">
                     <span class="w-1.5 h-1.5 bg-blue-900 rounded-full mr-3 mt-2"></span>
                     <span>한국외국어대학교 교육대학원 부원장 (2025.01 – 현재)</span>
@@ -186,11 +183,10 @@
 
             </div>
 
-            <!-- Graduate Students -->
-            <div class="mt-10 pt-6 border-t border-gray-100">
+            <div class="mt-10 pt-6 border-t border-gray-200/70">
               <h2 class="text-2xl font-bold mb-1 hufs-blue">Graduate Students</h2>
-              <p class="text-base text-gray-700 font-medium mb-1">Kyung Ha Lee (이 경 하)</p>
-              <p class="text-sm text-gray-500 italic">
+              <p class="text-base text-gray-800 font-medium mb-1">Kyung Ha Lee (이 경 하)</p>
+              <p class="text-sm text-gray-600 italic">
                 Ph.D. Candidate, Counseling Psychology, Department of Psychology,<br>
                 Graduate School, Hankuk University of Foreign Studies
               </p>
@@ -204,13 +200,12 @@
           <main class="max-w-4xl mx-auto py-12 md:py-16 px-6">
             <h2 class="text-xl font-bold mb-10 text-left hufs-blue tracking-tight">Research & Publications</h2>
 
-            <!-- Ongoing Research -->
             <section class="mb-14">
               <h3 class="text-base font-bold mb-4 flex items-center hufs-blue">
                 <span class="w-1 h-4 hufs-bg mr-2.5"></span>Research in Progress
               </h3>
-              <div class="p-5 bg-white border border-gray-100 rounded-xl shadow-sm">
-                <ol class="list-decimal pl-5 space-y-3 text-[13px] text-gray-800 font-medium">
+              <div class="p-5 bg-white/75 border border-gray-100 rounded-xl shadow-sm">
+                <ol class="list-decimal pl-5 space-y-3 text-[13px] text-gray-900 font-medium">
                   <li>고기능 자폐스펙트럼(ASD)의 사회적 기능에 관한 체계적 문헌고찰 연구</li>
                   <li>성인 ADHD 증상과 직무역량의 관계: 한·중 직장인 비교 및 심리적 기제 분석</li>
                   <li>대상화 이론 기반 신체이형장애의 심리적 기제 탐색</li>
@@ -219,21 +214,20 @@
               </div>
             </section>
 
-            <!-- Publications -->
             <section>
               <h3 class="text-base font-bold mb-4 flex items-center hufs-blue">
                 <span class="w-1 h-4 hufs-bg mr-2.5"></span>Publications
               </h3>
 
               <div class="mb-10">
-                <h4 class="text-[9px] font-bold text-blue-600 mb-3 uppercase tracking-widest border-b border-blue-50 pb-0.5">In Press / Forthcoming</h4>
+                <h4 class="text-[9px] font-bold text-blue-700 mb-3 uppercase tracking-widest border-b border-blue-100/70 pb-0.5">In Press / Forthcoming</h4>
                 <div class="publication-item">
                   Hwang, I. C., & <strong>Baek, K. Y.</strong> (in press). Facing Sexual Objectification: A Qualitative Study on South Korean Adolescent Girls’ Perspectives. <em>The Counseling Psychologist</em>. (Scheduled for publication in April 2026, Corresponding Author).
                 </div>
               </div>
 
               <div class="space-y-5">
-                <h4 class="text-[9px] font-bold text-gray-400 mb-3 uppercase tracking-widest border-b border-gray-100 pb-0.5">Published (2019 - Present)</h4>
+                <h4 class="text-[9px] font-bold text-gray-500 mb-3 uppercase tracking-widest border-b border-gray-200/70 pb-0.5">Published (2019 - Present)</h4>
 
                 <div class="publication-item"><strong>Baek, K. Y.</strong>, Kim, S., & Joo, H. (2025). Qualitative Research on Gendered Racism Experienced by Asian Migrant Women in South Korea. <em>Asian Women</em>, 41(3), 1-22. (First & Corresponding Author).</div>
                 <div class="publication-item">박지수, 이정윤, <strong>백근영</strong> (2025). 디지털 시대의 육아: 육아관련 오픈채팅방에서의 MZ세대 어머니들의 경험과 의미. <em>육아지원연구</em>, 20(4), 155-186.</div>
@@ -258,9 +252,8 @@
           </main>
         </div>
 
-        <!-- Footer -->
-        <footer class="bg-white/70 backdrop-blur-md border-t border-gray-100 py-6 px-6">
-          <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-500">
+        <footer class="bg-white/55 backdrop-blur-lg border-t border-gray-200/60 py-6 px-6">
+          <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center text-[9px] text-gray-600">
             <div class="mb-2 md:mb-0 text-center md:text-left">
               <p class="font-bold hufs-blue mb-0.5 uppercase tracking-tight">PSV Lab</p>
               <p>Institute for Psychology and Social Adaptation of Vulnerable Populations</p>
@@ -279,12 +272,12 @@
       function showTab(tabId) {
         document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
         document.querySelectorAll('nav button').forEach(el => el.classList.remove('nav-active'));
-        document.querySelectorAll('nav button').forEach(el => el.classList.add('text-gray-500'));
+        document.querySelectorAll('nav button').forEach(el => el.classList.add('text-gray-600'));
 
         document.getElementById(tabId).classList.add('active');
         const activeNav = document.getElementById('nav-' + tabId);
         activeNav.classList.add('nav-active');
-        activeNav.classList.remove('text-gray-500');
+        activeNav.classList.remove('text-gray-600');
 
         window.scrollTo(0, 0);
       }
